@@ -229,11 +229,12 @@ nav a.active {
   max-width: 900px;
   margin: 0 auto;
   color: var(--text);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .about-card:hover {
-  transform: scale(1.01);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 .section-title {
@@ -245,45 +246,86 @@ nav a.active {
   -webkit-text-fill-color: transparent;
 }
 
+.about-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.about-card p strong {
+  color: var(--accent);
+}
+
+.about-card h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
 .about-bullets {
   list-style: none;
   padding-left: 0;
 }
 
 .about-bullets li {
-  margin: 15px 0;
-  font-size: 16.5px;
-  line-height: 1.7;
+  margin: 12px 0;
+  padding-left: 28px;
+  position: relative;
+  font-size: 0.95rem;
+  line-height: 1.6;
   color: var(--text);
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-
-/* 💡 Skills */
-#skills {
-  background: var(--darkest);
+.about-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 1.2rem;
+  top: 0;
+  line-height: 1.2;
 }
 
+/* .about-bullets li:hover {
+  color: #6ee7b7;
+  transform: translateX(4px);
+} */
+
+/* skill section */
 .skills-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* ✅ This centers the badges horizontally */
-  gap: 15px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.skill-category h3 {
+  margin-bottom: 0.8rem;
+  color: var(--text); /* matches your theme */
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .skill-badge {
-  background: var(--light);
-  color: var(--darkest);
-  padding: 10px 20px;
-  border-radius: 8px;
+  display: inline-block;
+  background: var(--medium);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  margin: 0.2rem 0.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional: slight enhancement */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .skill-badge:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -480,6 +522,7 @@ footer::before {
     height: 48px;
     width: 48px;
   }
+
   header .container {
     flex-direction: column;
     align-items: flex-start;
@@ -516,7 +559,7 @@ footer::before {
 
   .section-title {
     font-size: 1.6rem;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .skills-grid,
@@ -529,6 +572,30 @@ footer::before {
     width: 100%;
     padding: 24px;
     margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .about-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .about-card h3 {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .about-bullets li {
+    font-size: 0.9rem;
+    padding-left: 22px;
+    margin: 10px 0;
+  }
+
+  .about-bullets li::before {
+    font-size: 1rem;
+    top: 0;
   }
 
   .btn {
@@ -547,13 +614,14 @@ footer::before {
     height: 40px;
     width: 40px;
   }
+
   #hero h1 {
     font-size: 1.6rem;
   }
 
   .section-title {
     font-size: 1.4rem;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
 
   .btn {
@@ -566,7 +634,8 @@ footer::before {
   }
 
   h1, h2, h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
   }
 
   .contact-card,
@@ -577,15 +646,29 @@ footer::before {
     border-radius: 10px;
   }
 
-  .about-bullets li {
+  /* About Section */
+  .about-card p {
     font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 8px 0;
+    line-height: 1.5;
+    margin-bottom: 14px;
   }
 
-  .about-card {
-    font-size: 0.95rem;
-    box-shadow: none;
+  .about-card h3 {
+    font-size: 1rem;
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  .about-bullets li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding-left: 20px;
+    margin: 6px 0;
+  }
+
+  .about-bullets li::before {
+    font-size: 1rem;
+    top: 0;
   }
 
   footer {
@@ -596,7 +679,7 @@ footer::before {
   .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 12px;
   }
 
   #hero p,
@@ -606,7 +689,7 @@ footer::before {
   }
 
   section {
-    padding: 40px 16px;
+    padding: 35px 16px;
   }
 }
 
@@ -626,13 +709,14 @@ footer::before {
     font-size: 0.75rem;
     padding: 6px 12px;
   }
+
   #hero h1 {
     font-size: 1.4rem;
   }
 
   .section-title {
     font-size: 1.2rem;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   .btn {
@@ -640,14 +724,9 @@ footer::before {
     padding: 6px 14px;
   }
 
-  nav a {
-    font-size: 0.85rem;
-    padding: 10px 16px;
-  }
-
   h1, h2, h3 {
     font-size: 1rem;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
 
   .contact-card,
@@ -656,10 +735,29 @@ footer::before {
     border-radius: 8px;
   }
 
-  .about-bullets li {
+  /* About Section */
+  .about-card p {
     font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .about-card h3 {
+    font-size: 0.95rem;
+    margin-top: 14px;
+    margin-bottom: 8px;
+  }
+
+  .about-bullets li {
+    font-size: 0.8rem;
     line-height: 1.3;
-    margin: 6px 0;
+    padding-left: 18px;
+    margin: 5px 0;
+  }
+
+  .about-bullets li::before {
+    font-size: 0.9rem;
+    top: 0;
   }
 
   footer {
@@ -668,46 +766,47 @@ footer::before {
   }
 
   #greeting {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-top: 6px;
   }
 
   .skills-grid,
   .projects-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
   }
 
   section {
-    padding: 30px 12px;
+    padding: 25px 12px;
   }
 
-/* 📦 Project Section — Ultra Small Devices */
-.projects-grid {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 0;
-}
+  /* 📦 Project Section — Ultra Small Devices */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0;
+  }
 
-.project-card {
-  padding: 12px;
-  border-radius: 8px;
-}
+  .project-card {
+    padding: 10px;
+    border-radius: 8px;
+  }
 
-.project-card h3 {
-  font-size: 1rem;
-  margin-bottom: 6px;
-}
+  .project-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+  }
 
-.project-card p {
-  font-size: 0.85rem;
-  line-height: 1.3;
-}
+  .project-card p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+  }
 
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  margin-bottom: 8px;
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
 }
-}
+/* End of style.css */
