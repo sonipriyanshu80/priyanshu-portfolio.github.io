@@ -184,6 +184,7 @@ nav a.active {
   background: var(--darkest);
   padding: 130px 20px 100px;
   text-align: center;
+  position: relative;
 }
 #hero h1 span {
   color: var(--accent);
@@ -242,8 +243,10 @@ nav a.active {
   font-size: 2rem;
   margin-bottom: 25px;
   background: linear-gradient(90deg, var(--accent), #6ee7b7);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .about-card p {
@@ -289,6 +292,36 @@ nav a.active {
   font-size: 1.2rem;
   top: 0;
   line-height: 1.2;
+}
+
+.resume-pill {
+  position: absolute;
+  top: clamp(160px, 22vw, 240px);
+  right: clamp(1.2rem, 8vw, 8%);
+  padding: clamp(0.35rem, 1vw, 0.55rem) clamp(0.9rem, 2vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.6vw, 0.95rem);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text);
+  background: rgba(13, 27, 42, 0.7);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.resume-pill:hover {
+  transform: translateY(-2px);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+@media screen and (max-width: 600px) {
+  .resume-pill {
+    right: 1rem;
+    top: 130px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* .about-bullets li:hover {
@@ -475,6 +508,12 @@ footer::before {
     padding: 0 18px;
   }
 
+  .resume-pill {
+    right: 5%;
+    top: 190px;
+    font-size: 0.9rem;
+  }
+
   nav a {
     font-size: 0.95rem;
   }
@@ -516,6 +555,13 @@ footer::before {
 @media screen and (max-width: 768px) {
   header {
     padding: 8px 0; /* Slightly smaller navbar */
+  }
+
+  .resume-pill {
+    top: 170px;
+    right: 1.5rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.9rem;
   }
 
   .logo {
@@ -610,6 +656,13 @@ footer::before {
     padding: 6px 0; /* Even smaller on tiny screens */
   }
 
+  .resume-pill {
+    top: 145px;
+    right: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.78rem;
+  }
+
   .logo {
     height: 40px;
     width: 40px;
@@ -698,6 +751,13 @@ footer::before {
   header {
     padding: 8px 0;
     backdrop-filter: blur(10px);
+  }
+
+  .resume-pill {
+    top: 130px;
+    right: 0.5rem;
+    padding: 0.28rem 0.75rem;
+    font-size: 0.72rem;
   }
 
   .logo {
