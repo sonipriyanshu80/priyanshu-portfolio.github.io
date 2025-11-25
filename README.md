@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/logo.webp.jpg" alt="PS Logo" width="90" />
-</p>
-
 # Priyanshu Soni – Portfolio
 
 Modern single-page experience highlighting Priyanshu’s skills, featured projects, and contact options with smooth scrolling, responsive layout, and subtle motion cues.
@@ -61,4 +57,5 @@ Visit `http://localhost:5500` (or the port shown) and start editing `index.html`
 ---
 
 Thanks for visiting! If you build on this project or want to collaborate, feel free to reach out. 🎨✨
+
 
